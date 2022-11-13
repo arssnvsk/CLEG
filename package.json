@@ -1,1 +1,17 @@
-{}
+{
+  "name": "cleg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arssnvsk/CLEG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arssnvsk/CLEG/issues"
+  },
+  "homepage": "https://github.com/arssnvsk/CLEG#readme"
+}
