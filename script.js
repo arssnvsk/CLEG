@@ -4,13 +4,14 @@ const ORDER_ENDPOINT = '/land/2/orders'
 const PLAYER_ENDPOINT = '/player'
 const BUY_ORDER_ENDPOINT = (id) => '/order/' + id + '/buy'
 const SELL_ORDER_ENDPOINT = (id) => '/playerland/' + id + '/place-order'
-const MAX_COMMON_PRICE = 33
-const SELL_PRICE = 36.4
+const MAX_COMMON_PRICE = 34
+const SELL_PRICE = (36.4 + Math.random() * 0.1).toFixed(2)
 
 const http = async ({ endpoint, config = {} }) => {
   const defaultConfig = {
     headers: {
-      authorization: 'Bearer ' + TOKEN
+      authorization: 'Bearer ' + TOKEN,
+      'content-type': 'application/json'
     }
   }
   const res = await fetch(BASE_URL + endpoint, { ...defaultConfig, ...config })
