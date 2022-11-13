@@ -57,9 +57,7 @@ const buyOrders = async (orders) => {
 const sellOrder = async (ID) => {
   const sellOrderConfig = {
     method: 'POST',
-    body: {
-      clegPrice: SELL_PRICE
-    }
+    body: JSON.stringify({ clegPrice: SELL_PRICE })
   }
   try {
     const res = await http({
