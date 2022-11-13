@@ -29,7 +29,6 @@ const getOrders = async () => {
   const filtered = sortedOrders.filter(
     ({ ClegPrice }) => ClegPrice <= MAX_COMMON_PRICE
   )
-  console.log(filtered)
   return filtered
 }
 
@@ -68,7 +67,7 @@ const sellOrders = async () => {
     body: JSON.stringify({ clegPrice: SELL_PRICE })
   }
 
-  const orders = getNotSellingOrders()
+  const orders = await getNotSellingOrders()
   for (const { id } of orders) {
     try {
       const res = await http({
