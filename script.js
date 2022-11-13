@@ -28,6 +28,7 @@ const getOrders = async () => {
   const filtered = sortedOrders.filter(
     ({ ClegPrice }) => ClegPrice <= MAX_COMMON_PRICE
   )
+  console.log(filtered)
   return filtered
 }
 
