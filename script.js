@@ -15,7 +15,6 @@ const http = async ({ endpoint, config = {} }) => {
   }
   const res = await fetch(BASE_URL + endpoint, { ...defaultConfig, ...config })
   const jsoned = await res.json()
-  console.log(jsoned)
   return jsoned
 }
 
@@ -29,7 +28,6 @@ const getOrders = async () => {
   const filtered = sortedOrders.filter(
     ({ ClegPrice }) => ClegPrice <= MAX_COMMON_PRICE
   )
-  console.log(filtered)
   return filtered
 }
 
