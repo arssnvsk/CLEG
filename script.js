@@ -54,8 +54,11 @@ const buyOrders = async (orders) => {
 }
 
 const getNotSellingOrders = async () => {
+  const DESERT = 'Desert'
   const orders = await http({ endpoint: PLAYER_LAND_ENDPOINT })
-  const notSellingorders = orders.filter(({ clegPrice }) => clegPrice === 0)
+  const notSellingorders = orders.filter(
+    ({ clegPrice, name }) => clegPrice === 0 && name !== DESERT
+  )
   console.log('not sell orders', notSellingorders)
   return notSellingorders
 }
