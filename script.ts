@@ -44,7 +44,14 @@ const getPlayerInfo = async () => {
 
 const getBuylableOrders = async (balance: number) => {
   const allOrders: IOrder[] = await getOrders()
-  const amountToBuy = Math.floor(balance / MAX_COMMON_PRICE)
+  let sum = 0
+  let amountToBuy = 0
+  allOrders.forEach(({ ClegPrice }) => {
+    if (sum + ClegPrice <= balance) {
+      amountToBuy++
+      sum += ClegPrice
+    }
+  })
   return allOrders.slice(0, amountToBuy)
 }
 
